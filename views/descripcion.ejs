@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  
+    <link rel="stylesheet" href="/css/desc.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="padre">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/"><img src="/images/logo-dark-128x32(1).png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/product">Añadir producto</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Accesorios
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/vistas">Cascos</a>
+                <a class="dropdown-item" href="/vistas">Protectores</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/vistas">Guantes</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/users" tabindex="-1" aria-disabled="true">Registro</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <a href="#" class="btn btn-default btn-lg active" role="button">Clientes</a>
+          </form>
+        </div>
+      </nav>
+
+    
+    <div class="container">
+        <div class="row">
+            <div>
+            <% datas.forEach(datas =>{%>
+             <div class="col-xs-4 item-photo">
+                  <img style="max-width:100%;" src="/uploads/<%= datas.img %>" class="img" />
+              </div>
+             
+              <div class="col-xs-5 ulio" style="border:0px solid gray">
+                  <div class="section"><!-- Datos del vendedor y titulo del producto -->
+                  <h3><%= datas.name_product %></h3>    
+                  <h5 style="color:#337ab7">vendido por <a href="#">XLMOTO</a> · <small style="color:#337ab7">(5054 ventas)</small></h5>
+      
+                  <!-- Precios -->
+                  <h6 class="title-price"><small>PRECIO OFERTA</small></h6>
+                  <h3 style="margin-top:0px;">69'99€</h3>
+      
+                  <!-- Detalles especificos del producto -->
+                  
+                      <h6 class="title-attr" style="margin-top:15px;" ><small>COLOR</small></h6>                    
+                      <div>
+                          <div class="attr" style="width:25px;background:#5a5a5a;"></div>
+                          <div class="attr" style="width:25px;background:white;"></div>
+                      </div>
+                  </div>
+                  <div class="section" style="padding-bottom:5px;">
+                      <h6 class="title-attr"><small>TALLA</small></h6>                    
+                      <div>
+                          <div class="attr2">XL</div>
+                          <div class="attr2">L</div>
+                          <div class="attr2">M</div>
+                      </div>
+                  </div>   
+                  <div class="section" style="padding-bottom:20px;">
+                      <h6 class="title-attr"><small>STOCK</small></h6>                    
+                      <div>
+                          <div class="btn-minus"><span class="glyphicon glyphicon-minus"></span></div>
+                          <input value="40" />
+                          <div class="btn-plus"><span class="glyphicon glyphicon-plus"></span></div>
+                      </div>
+                  </div>                
+      
+                  <!-- Botones de compra -->
+                  <div class="section" style="padding-bottom:20px;">
+                      <button class="btn btn-success"><span style="margin-right:20px" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Agregar al carro</button>
+                      <h6><a href="#"><span class="glyphicon glyphicon-heart-empty" style="cursor:pointer;"></span> Agregar a lista de deseos</a></h6>
+                  </div>                                        
+              </div>                              
+              
+              <div class="col-xs-9">
+                  <ul class="menu-items">
+                      <li class="active">Detalle del producto</li>
+                      <li>Garantía</li>
+                      <li>Vendedor</li>
+                      <li>Envío</li>
+                  </ul>
+                  <div style="width:100%;border-top:1px solid silver">
+                      <p style="padding:15px;">
+                          <small>
+                            <%= datas.description %>
+                          </small>
+                      </p>
+                    </div>   
+                  </div>
+              </div>
+              <% })%>		
+          </div>
+      </div>        
+      
+            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

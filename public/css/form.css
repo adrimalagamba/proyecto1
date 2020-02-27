@@ -1,0 +1,13 @@
+
+  body {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 14px;
+    background: #1a1b1c;
+  
+  }
+  .input{
+    border: none;
+    background: burlywood;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+  }

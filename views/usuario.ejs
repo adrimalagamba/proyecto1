@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employed Individual</title>
+</head>
+
+<body>
+    <h1>vista de un solo usuario</h1>
+    <p>id usuario</p>
+    <%= resultsuser.id_user %>
+    <p>name employed</p>
+    <%= resultsuser.name %>
+    <p>name job</p>
+    <%= resultsuser.name_job %>
+
+    
+    <form action="/user/update/<%= resultsuser.id_user %>" method="post">
+        <input type="text" name="name" value="<%= resultsuser.name %>">
+        <input type="text" name="lastname" value="<%= resultsuser.lastname %>">
+        <input type="number" name="year" value="<%= resultsuser.year %>">
+        <input type="email" name="email" value="<%= resultsuser.email %>">
+        <input type="password" name="password" value="<%= resultsuser.password %>">
+        <input type="number" name="salary" value="<%= resultsuser.salary %>">
+        <input type="text" name="name_job" value="<%= resultsuser.name_jobs %>">
+        <input type="submit">
+    </form>
+</body>
+
+</html>
